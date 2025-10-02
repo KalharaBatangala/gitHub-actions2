@@ -1,0 +1,19 @@
+name: Label PRs when approved
+
+on: 
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  label-when-approved:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Label PR when approved
+        uses: actions-ecosystem/action-add-labels@v1
+        env:
+          APPROVALS: '1' # Number of required approvals
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ADD_LABEL: "Approved" # Label to add when PR is approved
+
+
