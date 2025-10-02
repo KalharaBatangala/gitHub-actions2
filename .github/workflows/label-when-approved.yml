@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Label PR when approved
-        uses: pullreminders/label-when-approved-action@main
+        uses: actions-ecosystem/action-add-labels@v1
         env:
           APPROVALS: '1' # Number of required approvals
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
